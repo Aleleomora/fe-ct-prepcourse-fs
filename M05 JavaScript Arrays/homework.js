@@ -60,12 +60,30 @@ function arrayContiene(array, elemento) {
    // Verifica si el elemento existe dentro del arreglo recibido.
    // Retornar true si está, o false si no está.
    // Tu código:
+   // for (let = i; i < array.length; i++){
+//   if (array [i] === elemento){
+      //return true//
+// }
+//
+   //} return false;
+   
+   return array.includes(elemento);
 }
 
 function agregarNumeros(arrayOfNums) {
    // El parámetro "arrayOfNums" debe ser un arreglo de números.
    // Suma todos los elementos y retorna el resultado.
    // Tu código:
+   var total = 0;
+   for (let i = 0; i = arrayOfNums.length; i++){
+     total =+ arrayOfNums [i];
+   }
+   return total;
+   //* arrayOfNums.forEach(element =>{
+//    return total =+ element;
+  //* }return total;
+
+  //* ) Otra forma para llegar al mismo resultado
 }
 
 function promedioResultadosTest(resultadosTest) {
