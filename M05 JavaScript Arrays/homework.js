@@ -67,10 +67,8 @@ function agregarNumeros(arrayOfNums) {
    // El parámetro "arrayOfNums" debe ser un arreglo de números.
    // Suma todos los elementos y retorna el resultado.
    // Tu código:
-   arrayOfNums.forEach((elem) => {
-      total += elem;
-   })
-   return total;
+   var sumanumeros = arrayOfNums.reduce((num1, num2) => num1 + num2);
+   return sumanumeros;
  }
 
 function promedioResultadosTest(resultadosTest) {
@@ -103,10 +101,18 @@ function multiplicarArgumentos() {
    // Si no se pasan argumentos retorna 0. Si se pasa un argumento, simplemente retórnalo.
    // [PISTA]: "arguments" es un arreglo.
    // Tu código:
-   if (arguments.length === 0 || arguments.length < 1){
+   var resultado = 1;
+   if ( arguments.length === 0){
       return 0;
+   } else if(arguments.length === 1){
+      return arguments [0];
+   } else {
+      for ( var i = 0; i < arguments.length; i++){
+         resultado = resultado * arguments[i];
+      }
+      return resultado;
    }
-   var argMultiplicados = arguments[0];
+
 }
 
 function cuentoElementos(array) {
@@ -135,18 +141,21 @@ function empiezaConNueve(num) {
    // Esta función recibe por parámetro un número.
    // Debe retornar true si el entero inicia con 9 y false en otro caso.
    // Tu código:
-   num 
-   while (num <= 10){
-      num /= 10;
-   }
-   return false;
+   var aux = num.toString().charAt(0);
+   if (parseInt(aux) === 9){
+      return true;
+   } return false;
 }
 
 function todosIguales(array) {
    // Si todos los elementos del arreglo son iguales, retornar true.
    // Caso contrario retornar false.
    // Tu código:
-
+   for (var i = 0; i < array.length; i++){
+      if (array[i] === array[i + 1]){
+         return true;
+      } 
+   } return false;
 }
 
 function mesesDelAño(array) {
@@ -154,6 +163,22 @@ function mesesDelAño(array) {
    // "Marzo" y "Noviembre", guardarlos en un nuevo arreglo y retornarlo.
    // Si alguno de los meses no está, retornar el string: "No se encontraron los meses pedidos".
    // Tu código:
+   var nuevo = []
+   for( var i = 0; i < array.length; i++){
+      if (array[i] === "Enero"){
+          nuevo.push(array[i]);
+      } 
+      if(array[i] === "Marzo"){
+         nuevo.push(array[i]);
+      }
+      if (array[i === "Noviembre"]){
+         nuevo.push(array[i])
+      }
+   }
+   if (nuevo.length === 3){
+      return "No se encontraron los meses pedidos";
+   }
+   return nuevo;
 }
 
 function tablaDelSeis() {
